@@ -6,7 +6,6 @@ import {
 } from "./actions";
 import { GET_HOME_DATA_REQUEST } from "./actionTypes";
 
-
 function* getHomePageContent() {
   try {
     const response = yield call(get, `/posts`);
@@ -16,7 +15,6 @@ function* getHomePageContent() {
     yield put(getHomeDataFailed(error));
   }
 }
-
 
 function* contentSaga() {
   yield takeLatest(GET_HOME_DATA_REQUEST, getHomePageContent);
